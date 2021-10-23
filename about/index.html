@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | LIULIN</title>
+<title>关于 | LIULIN</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,31 @@
 <link rel="stylesheet" href="https://LINliulin.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="我做的东西">
+    <meta name="description" content="
+欢迎来到我的小站呀，很高兴遇见你！🤝
+
+🏠 关于本站
+把我做的东西都放放
+👨‍💻 博主是谁
+一个不知名学生
+⛹ 兴趣爱好
+这太多了
+📬 联系我呀
+邮箱：lin@outlook.sk
+..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,50 +106,36 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
+          <div class="post-detail">
+            <h2 class="post-title">关于</h2>
+            <div class="post-date">2019-01-25</div>
+            
+            <div class="post-content" v-pre>
+              <blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<p>把我做的东西都放放</p>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<p>一个不知名学生</p>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<p>这太多了</p>
+<h2 id="联系我呀">📬 联系我呀</h2>
+<p>邮箱：lin@outlook.sk</p>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
+            </div>
             
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2021</h2>
+            
+
+            
               
-                
-                  <article class="post">
-                    <a href="https://LINliulin.github.io/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
-                      <h2 class="post-title">
-                        基于C51单片机的交通灯显示系统设计
-                      </h2>
-                    </a>
-                  </article>
-                
+                <div id="gitalk-container" data-aos="fade-in"></div>
               
-                
-                  <article class="post">
-                    <a href="https://LINliulin.github.io/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
-                      <h2 class="post-title">
-                        一位数值比较器的仿真设计与CMOS版图设计
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://LINliulin.github.io/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
-                      <h2 class="post-title">
-                        三人表决器CMOS版图设计
-                      </h2>
-                    </a>
-                  </article>
-                
+
               
             
+
           </div>
-
-          <div class="pagination-container">
-  
-  
-</div>
 
         </div>
       </div>
@@ -157,6 +161,29 @@ var app = new Vue({
     hljs.initHighlightingOnLoad()
   </script>
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '564dc72a73318590fc88',
+        clientSecret: 'b3d09751a02ee4300cc88033f312c9ce716dcacf',
+        repo: 'LINliulin.github.io',
+        owner: 'LINliulin',
+        admin: ['LINliulin'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
