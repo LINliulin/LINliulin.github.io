@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T12:00:25.075Z</updated>
+    <updated>2021-10-23T12:02:06.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -16,7 +16,18 @@
         <link href="https://LINliulin.github.io/post/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
         </link>
         <updated>2021-10-23T11:50:25.000Z</updated>
-        <content type="html"><![CDATA[<!-- more -->
+        <summary type="html"><![CDATA[<p>本文是基于80C51所作的交通灯显示系统，为本人课程设计，内容如下：<br>
+1.东西方向、南北方向均有红、黄、绿三种信号灯；<br>
+2.带紧急制动按钮，按钮按下，所有方向亮红灯；再次按下，恢复正常显示<br>
+3.夜间模式按钮按下，所有方向显示黄灯闪烁<br>
+4.实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文是基于80C51所作的交通灯显示系统，为本人课程设计，内容如下：<br>
+1.东西方向、南北方向均有红、黄、绿三种信号灯；<br>
+2.带紧急制动按钮，按钮按下，所有方向亮红灯；再次按下，恢复正常显示<br>
+3.夜间模式按钮按下，所有方向显示黄灯闪烁<br>
+4.实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）</p>
+<!-- more -->
 <p><a href="https://github.com/LINliulin/Traffic-Light-Display-System-Based-on-C51">基于C51单片机的交通灯显示系统仓库（Github）</a><br>
 <a href="https://github.com/LINliulin">本人Github</a></p>
 <h1 id="traffic-light-display-system-based-on-c51">Traffic-Light-Display-System-Based-on-C51</h1>
