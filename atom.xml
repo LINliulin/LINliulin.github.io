@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T12:09:37.014Z</updated>
+    <updated>2021-10-23T12:12:46.475Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -32,8 +32,8 @@
 <li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）。</li>
 </ol>
 <!-- more -->
-<p><a href="https://github.com/LINliulin/Traffic-Light-Display-System-Based-on-C51">基于C51单片机的交通灯显示系统仓库（Github）</a><br>
-<a href="https://github.com/LINliulin">本人Github</a></p>
+<p>🚦<a href="https://github.com/LINliulin/Traffic-Light-Display-System-Based-on-C51">基于C51单片机的交通灯显示系统仓库（Github）</a><br>
+😉<a href="https://github.com/LINliulin">本人Github</a></p>
 <h1 id="traffic-light-display-system-based-on-c51">Traffic-Light-Display-System-Based-on-C51</h1>
 <h2 id="本项目为本人课程设计备份基于c51单片机的交通灯显示系统">本项目为本人课程设计备份(基于C51单片机的交通灯显示系统)</h2>
 <h1 id="交通灯功能特点">交通灯功能特点</h1>
@@ -335,8 +335,8 @@ void main()
 <li>使用L-edit 进行版图绘制，并进行检测。</li>
 </ol>
 <!-- more -->
-<p><a href="https://github.com/LINliulin/One-Bit-Value-Comparator-Integrated-Circuit-Design">一位数值比较器的仿真设计与CMOS版图设计仓库（Github）</a><br>
-<a href="https://github.com/LINliulin">本人Github</a></p>
+<p>🏸<a href="https://github.com/LINliulin/One-Bit-Value-Comparator-Integrated-Circuit-Design">一位数值比较器的仿真设计与CMOS版图设计仓库（Github）</a><br>
+🙏<a href="https://github.com/LINliulin">本人Github</a></p>
 <h2 id="本库为本人课程设计备份一位数值比较器的设计仿真与cmos版图设计">（本库为本人课程设计备份）一位数值比较器的设计仿真与CMOS版图设计</h2>
 <h1 id="设计要求">设计要求</h1>
 <ol>
@@ -378,8 +378,8 @@ void main()
 <li>使用L-edit 进行版图绘制，并进行检测。</li>
 </ol>
 <!-- more -->
-<p><a href="https://github.com/LINliulin/Triple-Voting-Device-Integrated-Circuit-Design">三人表决器CMOS版图设计仓库(Github)</a><br>
-<a href="https://github.com/LINliulin">本人Github</a></p>
+<p>📦<a href="https://github.com/LINliulin/Triple-Voting-Device-Integrated-Circuit-Design">三人表决器CMOS版图设计仓库(Github)</a><br>
+😵<a href="https://github.com/LINliulin">本人Github</a></p>
 <h1 id="triple-voting-device-integrated-circuit-design">Triple-Voting-Device-Integrated-Circuit-Design</h1>
 <h2 id="本库为本人课程设计备份三人表决器cmos版图设计">（本库为本人课程设计备份）三人表决器CMOS版图设计</h2>
 <h1 id="设计要求">设计要求</h1>
