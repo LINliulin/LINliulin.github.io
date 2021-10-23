@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T11:49:04.045Z</updated>
+    <updated>2021-10-23T11:53:00.335Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -11,12 +11,50 @@
     <icon>https://LINliulin.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, LIULIN</rights>
     <entry>
+        <title type="html"><![CDATA[基于C51单片机的交通灯显示系统]]></title>
+        <id>https://LINliulin.github.io/post/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/</id>
+        <link href="https://LINliulin.github.io/post/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
+        </link>
+        <updated>2021-10-23T11:50:25.000Z</updated>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LINliulin/Traffic-Light-Display-System-Based-on-C51">基于C51单片机的交通灯显示系统仓库（Github）</a><br>
+<a href="https://github.com/LINliulin">本人Github</a></p>
+<h1 id="traffic-light-display-system-based-on-c51">Traffic-Light-Display-System-Based-on-C51</h1>
+<h2 id="本项目为本人课程设计备份基于c51单片机的交通灯显示系统">本项目为本人课程设计备份(基于C51单片机的交通灯显示系统)</h2>
+<h1 id="交通灯功能特点">交通灯功能特点</h1>
+<p>为对十字路口交通进行合理而有效的控制，本设计的数显交通灯系统需具备以下几种功能：</p>
+<ol>
+<li>在十字路口进行控制时，能够实现红、绿、黄3种颜色信号灯的颜色切换显示，以此来提示汽车进行直道通行、停止通行或转弯；</li>
+<li>两干道交替允许通行，每次放行30秒，黄灯亮5秒；</li>
+<li>当按下紧急制动按钮后，对系统进行中断，东西南北均显示红灯，再次按下时恢复正常状态；</li>
+<li>当按下夜间模式按钮后，对系统进行中断，所有方向均闪烁黄灯；</li>
+<li>将倒计时使用两位共阳极七段数码管进行时间显示，对直道通行、停止通行或转弯时间进行倒计时显示，提示各路口汽车通行时间。</li>
+</ol>
+<h1 id="设计思路">设计思路</h1>
+<p>为实现上文列出的十字路口交通控制三项基本功能，系统采用AT89C51单片机作为交通灯控制设计的核心模块，使用16位计时器进行倒计时、共阳极数码管进行倒计时显示、红黄绿三种颜色的LED作为交通灯、利用外部中断0来进入紧急模式及夜间模式。在系统设计的过程中，需要对系统进行硬件和软件两个方面的设计，设计完成后，为使人工管理控制更加方便快捷，还需对设计好的系统进行仿真，以便于程序的调整管控。</p>
+<h2 id="proteus仿真">Proteus仿真</h2>
+<p>为了更直观看到交通灯工作过程，本项目采用了Proteus软件进行模拟仿真，通过调试仿真结果基本能满足使用要求，可以根据实际需要调整不同方向灯亮的时间。<br>
+<img src="https://LINliulin.github.io/post-images/1634989939933.png" alt="" loading="lazy"></p>
+<h2 id="keil-5的应用">keil 5的应用</h2>
+<p>与大多数集成开发环境类似，Keil 5集成开发环境也是用工程的方法来管理文件，在一个工程文件中源程序（C51程序、汇编程序）、头文件等都可以进行统一管理。<br>
+安装运行KEIL 5，使用KEIL的开发工具进行项目开发过程，与其他软件开发项目的过程基本上相同：</p>
+<ol>
+<li>创建C 语言或汇编语言的源程序。</li>
+<li>编译或汇编源文件。</li>
+<li>纠正源文件中的错误。</li>
+<li>从编译器和汇编器连接目标文件。</li>
+<li>测试连接的应用程序。</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[一位数值比较器的仿真设计与CMOS版图设计]]></title>
         <id>https://LINliulin.github.io/post/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/</id>
         <link href="https://LINliulin.github.io/post/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
         </link>
         <updated>2021-10-23T11:45:01.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="本库为本人课程设计备份一位数值比较器的设计仿真与cmos版图设计">（本库为本人课程设计备份）一位数值比较器的设计仿真与CMOS版图设计</h2>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LINliulin/One-Bit-Value-Comparator-Integrated-Circuit-Design">一位数值比较器的仿真设计与CMOS版图设计仓库（Github）</a><br>
+<a href="https://github.com/LINliulin">本人Github</a></p>
+<h2 id="本库为本人课程设计备份一位数值比较器的设计仿真与cmos版图设计">（本库为本人课程设计备份）一位数值比较器的设计仿真与CMOS版图设计</h2>
 <h1 id="设计要求">设计要求</h1>
 <ol>
 <li>对电路进行仿真验证；</li>
@@ -45,7 +83,7 @@
         <link href="https://LINliulin.github.io/post/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
         </link>
         <updated>2021-10-23T11:41:06.000Z</updated>
-        <content type="html"><![CDATA[<p><a href="https://github.com/LINliulin/Triple-Voting-Device-Integrated-Circuit-Design">三人表决器CMOS版图设计仓库</a><br>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LINliulin/Triple-Voting-Device-Integrated-Circuit-Design">三人表决器CMOS版图设计仓库(Github)</a><br>
 <a href="https://github.com/LINliulin">本人Github</a></p>
 <h1 id="triple-voting-device-integrated-circuit-design">Triple-Voting-Device-Integrated-Circuit-Design</h1>
 <h2 id="本库为本人课程设计备份三人表决器cmos版图设计">（本库为本人课程设计备份）三人表决器CMOS版图设计</h2>
