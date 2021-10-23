@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T11:35:30.964Z</updated>
+    <updated>2021-10-23T11:42:32.048Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -10,4 +10,25 @@
     <logo>https://LINliulin.github.io/images/avatar.png</logo>
     <icon>https://LINliulin.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, LIULIN</rights>
+    <entry>
+        <title type="html"><![CDATA[三人表决器CMOS版图设计]]></title>
+        <id>https://LINliulin.github.io/post/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/</id>
+        <link href="https://LINliulin.github.io/post/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
+        </link>
+        <updated>2021-10-23T11:41:06.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="triple-voting-device-integrated-circuit-design">Triple-Voting-Device-Integrated-Circuit-Design</h1>
+<h2 id="本库为本人课程设计备份三人表决器cmos版图设计">（本库为本人课程设计备份）三人表决器CMOS版图设计</h2>
+<h1 id="设计要求">设计要求</h1>
+<ol>
+<li>根据所用的工艺，选取合理的模型库；</li>
+<li>选用以lambda为单位的设计规则</li>
+<li>全手工、层次化设计版图；</li>
+<li>用CMOS设计出合理且切实可行的一位数值比较器</li>
+<li>使用L-Edit进行版图绘制，并进行检测。</li>
+</ol>
+<h1 id="l-edit版图设计">L-edit版图设计</h1>
+<p>本设计使用L-edit进行版图绘制，版图文件内包括NMOS、PMOS、三输入或非门、二输入或非门，直至三人表决器。<br>
+<img src="https://LINliulin.github.io/post-images/1634989341442.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
 </feed>
