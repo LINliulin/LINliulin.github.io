@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T11:55:54.622Z</updated>
+    <updated>2021-10-23T11:58:15.285Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -45,6 +45,239 @@
 <li>从编译器和汇编器连接目标文件。</li>
 <li>测试连接的应用程序。</li>
 </ol>
+<h3 id="程序代码c语言">程序代码（C语言）</h3>
+<p>`#include &lt;reg51.h&gt;</p>
+<p>sbit Red_nb=P2^6;		                //南北红灯标志<br>
+sbit Yellow_nb=P2^5;	                //南北黄灯标志<br>
+sbit Green_nb=P2^4;                     //南北绿灯标志</p>
+<p>sbit Red_dx=P2^3;		                //东西红灯标志<br>
+sbit Yellow_dx=P2^2;	                //东西黄灯标志<br>
+sbit Green_dx=P2^1;		                //东西绿灯标志</p>
+<p>bit dx_nb=0;			                //东西南北控制位<br>
+bit Yellow_status=0;	                //黄灯闪烁标志位</p>
+<p>unsigned char  sec_dx;  		    	//东西方向时间存储变量<br>
+unsigned char  sec_nb;			    	//南北方向时间存储变量<br>
+float  set_timedx=30;			    	//东西方向的通行单次时间<br>
+float  set_timenb=30;				    //南北方向的通行单次时间<br>
+unsigned char  buf[4];				    //秒显示的变量<br>
+unsigned char data countt0;             //定时器0中断计数器<br>
+unsigned char data countt1;             //定时器1中断计数器</p>
+<p>unsigned char flag_option=0;            //功能选择位:1 紧急模式；2 夜间模式</p>
+<p>sbit  key_EP=P3^2;		                //紧急模式<br>
+unsigned char conut_ER;                 //紧急状态</p>
+<p>sbit  key_night=P3^3;		            //夜间模式<br>
+unsigned char flag_Night;		        //夜间状态<br>
+unsigned char conut_night;              //夜间模式</p>
+<p>unsigned char code led[11]={	        //共阴极字型码<br>
+0x3f,  //--0<br>
+0x06,  //--1<br>
+0x5b,  //--2<br>
+0x4f,  //--3<br>
+0x66,  //--4<br>
+0x6d,  //--5<br>
+0x7d,  //--6<br>
+0x07,  //--7<br>
+0x7f,  //--8<br>
+0x6f,  //--9<br>
+0x00   //--NULL<br>
+};</p>
+<p>/<em>延时函数</em>/<br>
+void delay(int time)<br>
+{<br>
+unsigned int j,k;<br>
+for(j=0;j&lt;time;j++)			<br>
+for(k=0;k&lt;124;k++);		<br>
+}</p>
+<p>/<em>显示函数</em>/<br>
+void display(void)<br>
+{<br>
+buf[0]=sec_nb/10; 		//第1位 东西十位<br>
+buf[1]=sec_nb%10; 		//第2位 东西个位<br>
+buf[2]=sec_dx/10; 		//第3位 南北十位<br>
+buf[3]=sec_dx%10; 		//第4位 南北个位<br>
+P1=~0xfe;           		//LED1<br>
+P0=~led[buf[0]];		    //东西十位<br>
+delay(1);<br>
+P1=~0xfd;             	//LED2<br>
+P0=~led[buf[1]];		    //东西个位<br>
+delay(1);				<br>
+P1=~0Xfb;		  		//LED3<br>
+P0=~led[buf[2]];		    //南北十位<br>
+delay(1);				<br>
+P1=~0Xf7;				//LED4<br>
+P0=~led[buf[3]];		    //南北个位<br>
+delay(1);				<br>
+}</p>
+<p>/<em>功能函数</em>/<br>
+void function(void)<br>
+{<br>
+switch (flag_option)<br>
+{<br>
+case 1:<br>
+{<br>
+conut_ER=1-conut_ER;<br>
+if(conut_ER<mark>1)<br>
+{<br>
+TR0=0;						//关交通灯定时器<br>
+P2=0x00;					//关全部信号灯<br>
+Red_dx=1;                   //全部置红灯<br>
+Red_nb=1;<br>
+}		<br>
+if(conut_ER</mark>0)<br>
+{<br>
+TR0=1;						//开交通灯定时器<br>
+P2=0X00;					//关全部信号灯<br>
+Green_dx=1;					//东西绿灯亮<br>
+Red_nb=1;					//南北红灯亮<br>
+sec_dx=set_timedx;          //回到初值<br>
+sec_nb=sec_dx+5;<br>
+}	<br>
+flag_option=0;	<br>
+break;<br>
+}<br>
+case 2:<br>
+{<br>
+conut_night=1-conut_night;<br>
+if(conut_night<mark>1)<br>
+{<br>
+TR0=0;						//关交通灯定时器<br>
+P2=0x00;                    //关全部信号灯<br>
+flag_Night=1;               //打开夜间模式<br>
+sec_dx=00;					//四个方向的时间都为00<br>
+sec_nb=00;<br>
+}<br>
+if(conut_night</mark>0)<br>
+{<br>
+TR0=1;						//开交通灯定时器<br>
+P2=0x00;                    //关全部信号灯<br>
+Green_dx=1;					//东西绿灯亮<br>
+Red_nb=1;					//南北红灯亮<br>
+flag_Night=0;               //打开夜间模式<br>
+sec_dx=set_timedx;          //回到初值<br>
+sec_nb=sec_dx+5;<br>
+}<br>
+flag_option=0;<br>
+break;<br>
+}<br>
+default:<br>
+break;<br>
+}<br>
+}</p>
+<p>/<em>处理整个交通灯计时</em>/<br>
+void time0(void) interrupt 1 using 1  	//定时中断子程序<br>
+{<br>
+TH0=0x4C;							//重赋初值;11.0592m晶振50ms<br>
+TL0=0X00;<br>
+TR0=1;								//开交通灯定时器<br>
+countt0++;							//计数器数加1（用于计算时间）<br>
+if(countt0<mark>20)	                  	//定时器中断次数=20时（即1秒时）<br>
+{	<br>
+countt0=0;						//清零计数器<br>
+sec_dx--;						//东西时间减1<br>
+sec_nb--;						//南北时间减1<br>
+if(sec_nb</mark>0&amp;&amp;sec_dx<mark>5&amp;&amp;(Yellow_status</mark>0))		//当南北倒计时到0时，重置5秒，用于黄灯闪烁时间<br>
+{<br>
+sec_nb=5;<br>
+Yellow_status=1;<br>
+}<br>
+if(sec_dx<mark>0&amp;&amp;sec_nb</mark>5&amp;&amp;(Yellow_status<mark>0)) 		//当东西倒计时到0时，重置5秒，用于黄灯闪烁时间<br>
+{<br>
+sec_dx=5;<br>
+Yellow_status=1;			//启动黄灯开始倒计时<br>
+}<br>
+if((sec_nb&lt;=5)&amp;&amp;(dx_nb</mark>0)&amp;&amp;(Yellow_status<mark>1))  		//东西黄灯闪<br>
+{<br>
+Green_dx=0;<br>
+Yellow_dx=~Yellow_dx;<br>
+}<br>
+if((sec_dx&lt;=5)&amp;&amp;(dx_nb</mark>1)&amp;&amp;(Yellow_status<mark>1))  		//南北黄灯闪<br>
+{<br>
+Green_nb=0;<br>
+Yellow_nb=~Yellow_nb;<br>
+}<br>
+if(dx_nb</mark>0&amp;&amp;sec_nb<mark>0&amp;&amp;sec_dx</mark>0)			            //东西通行：当黄灯时间、通行方向倒计时到0时<br>
+{<br>
+P2=0x00;					//重置东西南背方向的红绿灯<br>
+Green_nb=1;					//南北绿灯亮<br>
+Red_dx=1;					//东西红灯亮<br>
+dx_nb=!dx_nb;				//交换通行方向<br>
+Yellow_status=0;			//关闭黄灯闪烁<br>
+sec_dx=set_timedx+5;			//重赋东西方向的起始值<br>
+sec_nb=set_timenb;		//重赋南北方向的起始值<br>
+}<br>
+if(dx_nb<mark>1&amp;&amp;sec_dx</mark>0&amp;&amp;sec_nb==0)			            //南北通行：当黄灯时间、通行方向倒计时到0时<br>
+{<br>
+P2=0X00;					//重置东西南北的红绿灯状态<br>
+Green_dx=1;					//东西绿灯亮<br>
+Red_nb=1;					//南北红灯亮<br>
+dx_nb=!dx_nb;				//交换通行方向<br>
+Yellow_status=0;					//关闭黄灯闪烁<br>
+sec_dx=set_timedx;		//重赋东西方向的起始值<br>
+sec_nb=set_timenb+5;			//重赋南北方向的起始值<br>
+}<br>
+}<br>
+}</p>
+<p>/<em>用来处理夜间黄灯闪烁</em>/<br>
+void time1(void) interrupt 3 			//定时中断子程序<br>
+{<br>
+TH1=0x4C;							//重赋初值;11.0592m晶振50ms<br>
+TL1=0X00;<br>
+countt1++;							//计数器数加1（用于计算时间）<br>
+if(countt1<mark>10)					    //定时器中断次数=10时（即0.5秒）<br>
+{	<br>
+if(flag_Night</mark>1)<br>
+{<br>
+Yellow_nb=~Yellow_nb;		//南北黄灯<br>
+Yellow_dx=~Yellow_nb;		//东西黄灯<br>
+}	<br>
+}<br>
+if(countt1<mark>20)	                  	//定时器中断次数=20时（即1秒时）<br>
+{<br>
+countt1=0;						//清零计数器<br>
+if(flag_Night</mark>1)<br>
+{<br>
+Yellow_nb=~Yellow_nb;		//南北黄灯<br>
+Yellow_dx=~Yellow_nb;		//东西黄灯<br>
+}<br>
+}<br>
+}</p>
+<p>//外部中断0<br>
+void int0(void) interrupt 0 using 1	    //紧急模式<br>
+{<br>
+while(!key_EP)display();<br>
+flag_option=1;<br>
+}</p>
+<p>//外部中断1<br>
+void int1(void) interrupt 2 using 1	    //夜间模式<br>
+{<br>
+while(!key_night)display();<br>
+flag_option=2;<br>
+}</p>
+<p>/<em>初始化函数</em>/<br>
+void init()<br>
+{<br>
+TMOD=0X11;	   						//定时器设置<br>
+TH1=0x4C;							//TH1重赋初值;11.0592m晶振50ms<br>
+TL1=0X00;<br>
+TH0=0x4C;							//TH0重赋初值;11.0592m晶振50ms<br>
+TL0=0X00;<br>
+TCON=0X50;							//启动定时0、定时1<br>
+IE=0x8F;							//开总中断;定时器1中断开启;开外部中断1;定时器0中断开启;开外部中断<br>
+P2=0Xc3;							//开始默认状态，东西绿灯，南北黄灯<br>
+sec_nb=35;							//南北方向初始时间<br>
+sec_dx=30;							//东西方向初始时间<br>
+}</p>
+<p>//主程序<br>
+void main()<br>
+{<br>
+init();								//初始化定时器、中断服务<br>
+while(1)					 		<br>
+{<br>
+if(flag_option!=0)function(); 	//调用功能函数<br>
+display(); 						//调用显示函数<br>
+}<br>
+}<br>
+`</p>
 ]]></content>
     </entry>
     <entry>
