@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T11:46:56.058Z</updated>
+    <updated>2021-10-23T11:49:04.045Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -45,7 +45,9 @@
         <link href="https://LINliulin.github.io/post/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
         </link>
         <updated>2021-10-23T11:41:06.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="triple-voting-device-integrated-circuit-design">Triple-Voting-Device-Integrated-Circuit-Design</h1>
+        <content type="html"><![CDATA[<p><a href="https://github.com/LINliulin/Triple-Voting-Device-Integrated-Circuit-Design">三人表决器CMOS版图设计仓库</a><br>
+<a href="https://github.com/LINliulin">本人Github</a></p>
+<h1 id="triple-voting-device-integrated-circuit-design">Triple-Voting-Device-Integrated-Circuit-Design</h1>
 <h2 id="本库为本人课程设计备份三人表决器cmos版图设计">（本库为本人课程设计备份）三人表决器CMOS版图设计</h2>
 <h1 id="设计要求">设计要求</h1>
 <ol>
