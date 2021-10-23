@@ -1,91 +1,107 @@
-
+<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>LIULIN</title>
-<meta name="description" content="我做的东西">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://LINliulin.github.io/favicon.ico?v=1634992913940">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://LINliulin.github.io/favicon.ico?v=1634992924130">
 <link rel="stylesheet" href="https://LINliulin.github.io/styles/main.css">
 
 
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
 
+    <meta name="description" content="我做的东西">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    
   </head>
   <body>
     <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://LINliulin.github.io">
-        <img class="avatar" src="https://LINliulin.github.io/images/avatar.png?v=1634992913940" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://LINliulin.github.io">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://LINliulin.github.io">
+        <img src="https://LINliulin.github.io/images/avatar.png?v=1634992924130" class="site-logo">
         <h1 class="site-title">LIULIN</h1>
       </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
-  </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
+    <div>
       
         
-          <a href="/" class="menu purple-link">
+          <a href="/" class="site-nav">
             首页
           </a>
         
       
         
-          <a href="/archives" class="menu purple-link">
+          <a href="/archives" class="site-nav">
             归档
           </a>
         
       
         
-          <a href="/tags" class="menu purple-link">
+          <a href="/tags" class="site-nav">
             标签
           </a>
         
       
         
-          <a href="/post/about" class="menu purple-link">
+          <a href="/post/about" class="site-nav">
             关于
           </a>
         
       
     </div>
   </div>
-</transition>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      我做的东西
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://LINliulin.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
 
 
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://LINliulin.github.io/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
-        <h2 class="post-title">基于C51单片机的交通灯显示系统设计</h2>
-      </a>
-      <div class="post-abstract">
-        <p>本文是基于80C51所作的交通灯显示系统，为本人单片机课程设计，内容如下：</p>
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://LINliulin.github.io/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
+                  <h2 class="post-title">基于C51单片机的交通灯显示系统设计</h2>
+                </a>
+                <div class="post-date">
+                  2021-10-23
+                </div>
+                <div class="post-abstract">
+                  <p>本文是基于80C51所作的交通灯显示系统，为本人单片机课程设计，内容如下：</p>
 <ol>
 <li>东西方向、南北方向均有红、黄、绿三种信号灯；</li>
 <li>带紧急制动按钮，按钮按下，所有方向亮红灯；再次按下，恢复正常显示；</li>
@@ -93,135 +109,81 @@
 <li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）。</li>
 </ol>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-10-23</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://LINliulin.github.io/FLIodQaHn/">
-                课程设计
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://LINliulin.github.io/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
-        <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://LINliulin.github.io/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
-        <h2 class="post-title">一位数值比较器的仿真设计与CMOS版图设计</h2>
-      </a>
-      <div class="post-abstract">
-        <p>本人的集成电路课程设计，实现了一位数值比较器的CMOS版图设计，内容如下：</p>
+                </div>
+              </div>
+              
+                <a class="right" href="https://LINliulin.github.io/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong/">
+                  <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/ji-yu-c51-dan-pian-ji-de-jiao-tong-deng-xian-shi-xi-tong.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://LINliulin.github.io/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
+                  <h2 class="post-title">一位数值比较器的仿真设计与CMOS版图设计</h2>
+                </a>
+                <div class="post-date">
+                  2021-10-22
+                </div>
+                <div class="post-abstract">
+                  <p>本人的集成电路课程设计，实现了一位数值比较器的CMOS版图设计，内容如下：</p>
 <ol>
 <li>用Multisim进行电路的前期功能设计与仿真；</li>
 <li>用CMOS设计出合理且切实可行的一位数值比较器；</li>
 <li>使用L-edit 进行版图绘制，并进行检测。</li>
 </ol>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-10-22</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://LINliulin.github.io/FLIodQaHn/">
-                课程设计
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://LINliulin.github.io/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
-        <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://LINliulin.github.io/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
-        <h2 class="post-title">三人表决器CMOS版图设计</h2>
-      </a>
-      <div class="post-abstract">
-        <p>CMOS课程设计，内容如下：</p>
+                </div>
+              </div>
+              
+                <a class="right" href="https://LINliulin.github.io/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji/">
+                  <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/yi-wei-shu-zhi-bi-jiao-qi-de-fang-zhen-she-ji-yu-cmos-ban-tu-she-ji.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://LINliulin.github.io/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
+                  <h2 class="post-title">三人表决器CMOS版图设计</h2>
+                </a>
+                <div class="post-date">
+                  2021-10-21
+                </div>
+                <div class="post-abstract">
+                  <p>CMOS课程设计，内容如下：</p>
 <ol>
 <li>用CMOS设计出合理且切实可行的三人表决器；</li>
 <li>使用L-edit 进行版图绘制，并进行检测。</li>
 </ol>
 
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2021-10-21</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://LINliulin.github.io/FLIodQaHn/">
-                课程设计
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://LINliulin.github.io/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
-        <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/san-ren-biao-jue-qi-cmos-ban-tu-she-ji.png')">
+                </div>
+              </div>
+              
+                <a class="right" href="https://LINliulin.github.io/san-ren-biao-jue-qi-cmos-ban-tu-she-ji/">
+                  <div class="feature-container" style="background-image: url('https://LINliulin.github.io/post-images/san-ren-biao-jue-qi-cmos-ban-tu-she-ji.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
         </div>
-      </a>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
       </div>
-
-      <div class="site-footer">
-  <div class="slogan">我做的东西</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://LINliulin.github.io/atom.xml" target="_blank">RSS</a>
-</div>
-
-
     </div>
-    <script type="application/javascript">
 
-hljs.initHighlightingOnLoad()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
 
 var app = new Vue({
   el: '#app',
@@ -231,6 +193,13 @@ var app = new Vue({
 })
 
 </script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
 
 
 
