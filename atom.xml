@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LINliulin.github.io</id>
     <title>LIULIN</title>
-    <updated>2021-10-23T12:58:04.791Z</updated>
+    <updated>2021-10-25T02:18:00.377Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LINliulin.github.io"/>
     <link rel="self" href="https://LINliulin.github.io/atom.xml"/>
@@ -21,7 +21,7 @@
 <li>东西方向、南北方向均有红、黄、绿三种信号灯；</li>
 <li>带紧急制动按钮，按钮按下，所有方向亮红灯；再次按下，恢复正常显示；</li>
 <li>夜间模式按钮按下，所有方向显示黄灯闪烁；</li>
-<li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）。</li>
+<li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阴极数码管）。</li>
 </ol>
 ]]></summary>
         <content type="html"><![CDATA[<p>本文是基于80C51所作的交通灯显示系统，为本人单片机课程设计，内容如下：</p>
@@ -29,7 +29,7 @@
 <li>东西方向、南北方向均有红、黄、绿三种信号灯；</li>
 <li>带紧急制动按钮，按钮按下，所有方向亮红灯；再次按下，恢复正常显示；</li>
 <li>夜间模式按钮按下，所有方向显示黄灯闪烁；</li>
-<li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阳极数码管）。</li>
+<li>实时提醒绿灯亮的剩余时间（用两位数码管显示，使用共阴极数码管）。</li>
 </ol>
 ]]></content>
     </entry>
